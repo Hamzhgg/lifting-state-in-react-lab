@@ -4,7 +4,7 @@
 }
 
 :root {
-  line-height: 1;
+  line-height: 1.5;
   font-weight: 400;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
@@ -35,37 +35,38 @@ main {
   align-items: center;
 }
 
-section {
+section.burger-builder {
   width: 80%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 16px;
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 16px;
 }
 
 ul {
   width: 100%;
   height: 100%;
-
   margin: 0;
   padding: 16px;
   list-style: none;
-
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  background-color: #1a1a2e;
+  border-radius: 8px;
 }
 
-li {
+li.ingredient-item {
   padding: 8px;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
   border-radius: 8px;
   font-weight: bold;
   text-shadow: 0px 0px 2px #ffffff;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -75,5 +76,27 @@ button {
   cursor: pointer;
   border-radius: 8px;
   background-color: #443b63;
+  color: white;
   border: 1px solid transparent;
+  padding: 6px 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #575379;
+  transform: scale(1.05);
+}
+
+.ingredient-list,
+.burger-stack {
+  flex: 1;
+  min-height: 300px;
+}
+
+.ingredient-list {
+  background-color: #2e2e4d;
+}
+
+.burger-stack {
+  background-color: #3d3d5c;
 }
