@@ -1,27 +1,18 @@
-/* src/App.css */
+/* General Reset */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-  line-height: 1.5;
-  font-weight: 400;
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
   color-scheme: light dark;
   color: rgb(255, 255, 255);
   background-color: #050013;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-html,
-body,
-#root {
-  margin: 0;
+html, body, #root {
   height: 100%;
   overflow-x: hidden;
 }
@@ -33,7 +24,6 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #fff;
 }
 
 h1 {
@@ -41,66 +31,87 @@ h1 {
   margin-bottom: 16px;
 }
 
-section.burger-builder {
+section {
   width: 80%;
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
 }
 
-.ingredient-list,
-.burger-stack {
+/* Ingredient List and Burger Stack Styling */
+.ingredient-list, .burger-stack {
   flex: 1;
   background-color: #1a1a2e;
   border-radius: 8px;
   padding: 16px;
   max-height: 500px;
   overflow-y: auto;
+  
+  /* Hide scrollbar */
+  scrollbar-width: none; /* For Firefox */
+}
+
+.ingredient-list::-webkit-scrollbar,
+.burger-stack::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
 }
 
 ul {
-  margin: 0;
-  padding: 0;
+  width: 100%;
   list-style: none;
   display: flex;
   flex-direction: column;
+  gap: 8px;
 }
 
-li.ingredient-item {
-  padding: 12px;
-  margin-bottom: 8px;
+li {
+  padding: 8px;
+  margin-bottom: 4px;
   border-radius: 8px;
   font-weight: bold;
   text-shadow: 0px 0px 2px #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: white;
+  color: #ffffff;
 }
 
 button {
   cursor: pointer;
   border-radius: 8px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  background-color: #443b63;
   border: 1px solid transparent;
+  color: #ffffff;
   padding: 4px 8px;
   font-weight: bold;
+  transition: background-color 0.3s;
+  
+  &:hover {
+    background-color: #5a4a7a;
+  }
 }
 
-button:hover {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
+/* Ingredient Item Styling */
 .ingredient-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 8px;
   border-radius: 8px;
   font-weight: bold;
-  margin-bottom: 6px;
-  font-size: 0.9rem;
-  color: #fff;
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &.kaiser-bun { background-color: saddlebrown; }
+  &.sesame-bun { background-color: sandybrown; }
+  &.gluten-free-bun { background-color: peru; }
+  &.lettuce-wrap { background-color: olivedrab; }
+  &.beef-patty, &.soy-patty, &.black-bean-patty { background-color: #3F250B; }
+  &.chicken-patty { background-color: burlywood; }
+  &.lettuce { background-color: lawngreen; }
+  &.tomato { background-color: tomato; }
+  &.bacon { background-color: maroon; }
+  &.onion { background-color: lightyellow; }
+  &.cheddar-cheese { background-color: #FDE18B; }
+  &.swiss-cheese { background-color: #F1E1A8; }
 }
