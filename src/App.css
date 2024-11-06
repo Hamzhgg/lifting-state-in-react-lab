@@ -33,6 +33,12 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 16px;
 }
 
 section.burger-builder {
@@ -43,26 +49,26 @@ section.burger-builder {
   gap: 16px;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 16px;
+.ingredient-list,
+.burger-stack {
+  flex: 1;
+  background-color: #1a1a2e;
+  border-radius: 8px;
+  padding: 16px;
+  max-height: 500px;
+  overflow-y: auto;
 }
 
 ul {
-  width: 100%;
-  height: 100%;
   margin: 0;
-  padding: 16px;
+  padding: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  background-color: #1a1a2e;
-  border-radius: 8px;
 }
 
 li.ingredient-item {
-  padding: 8px;
+  padding: 12px;
   margin-bottom: 8px;
   border-radius: 8px;
   font-weight: bold;
@@ -70,33 +76,31 @@ li.ingredient-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: white;
 }
 
 button {
   cursor: pointer;
   border-radius: 8px;
-  background-color: #443b63;
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: 1px solid transparent;
-  padding: 6px 10px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 4px 8px;
+  font-weight: bold;
 }
 
 button:hover {
-  background-color: #575379;
-  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
-.ingredient-list,
-.burger-stack {
-  flex: 1;
-  min-height: 300px;
-}
-
-.ingredient-list {
-  background-color: #2e2e4d;
-}
-
-.burger-stack {
-  background-color: #3d3d5c;
+.ingredient-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+  color: #fff;
 }
